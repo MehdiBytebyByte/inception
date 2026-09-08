@@ -176,7 +176,7 @@ using the `WP_ADMIN_USER` / `WP_ADMIN_PASSWORD` values from your `.env`.
 
 ---
 
-## 🧹 Makefile targets
+## Makefile targets
 
 Run `make` targets from the `inception/` directory.
 
@@ -194,11 +194,11 @@ Run `make` targets from the `inception/` directory.
 | `logs`   | Tail logs from every service                                     |
 | `ps`     | List running containers                                          |
 
-> 🛠️ **Override data paths without editing:** the host folders are defined at the top of the `Makefile`. You can override them on the command line (e.g. `make DATA_PATH_DB=$HOME/data/mariadb ...`), but remember the **same paths** must match the `device:` entries in `srcs/docker-compose.yml`.
+> **Override data paths without editing:** the host folders are defined at the top of the `Makefile`. You can override them on the command line (e.g. `make DATA_PATH_DB=$HOME/data/mariadb ...`), but remember the **same paths** must match the `device:` entries in `srcs/docker-compose.yml`.
 
 ---
 
-## 🛡️ Security & going public
+## Security & going public
 
 This project was developed for the **42 vogsphere evaluation** — it uses throwaway local credentials on purpose.
 
@@ -217,7 +217,7 @@ Before making your GitHub repository **public**, please do the following:
    git push origin --force --all
    ```
 
-   > ⚠️ Rewriting history changes commit hashes — **do this before** collaborators clone or before it's public.
+   > Rewriting history changes commit hashes — **do this before** collaborators clone or before it's public.
 
 3. **Hardcoded personal data** — replace any occurrence of your intra login / email in `nginx.conf`, the NGINX `Dockerfile`, `.env.example` and this README with a placeholder such as `<login>`.
 
@@ -228,20 +228,20 @@ Once clean, flip your repository to public:
 
 ---
 
-## 🔒 What was NOT used
+## What was NOT used
 
 To stay true to the subject's mandatory rules:
 
-- ❌ No `latest` image tags
-- ❌ No pre-configured / ready-made service images (only `debian:bookworm` as base)
-- ❌ No `network: host`, no `--link`, no `links:`
-- ❌ No `docker-compose.yml` in `~/.docker` or other system folders
-- ❌ No passwords in Dockerfiles or the compose file (everything comes from `.env`)
-- ✅ NGINX is the **only** container exposed to the host (`443`)
+- No `latest` image tags
+- No pre-configured / ready-made service images (only `debian:bookworm` as base)
+- No `network: host`, no `--link`, no `links:`
+- No `docker-compose.yml` in `~/.docker` or other system folders
+- No passwords in Dockerfiles or the compose file (everything comes from `.env`)
+- NGINX is the only container exposed to the host (`443`)
 
 ---
 
-## 📚 Resources
+## Resources
 
 - [42 subject: Inception](https://cdn.intra.42.fr/pdf/pdf/85535/en.subject.pdf)
 - [Docker docs](https://docs.docker.com/)
